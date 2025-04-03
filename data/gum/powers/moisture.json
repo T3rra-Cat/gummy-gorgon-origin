@@ -1,6 +1,6 @@
 {
     "name": "Absorbant Body",
-    "description": "Due to your now-gummy body being very pourous, you can absorb a lot of water, increasing your size but not inreasing your movement speed, and you can lose that moisture to gain speed at the cost of size.",
+    "description": "Due to your now-gummy body being very porous, you can absorb a lot of water, increasing your size but not inreasing your movement speed, and you can lose that moisture to gain speed at the cost of size.",
     "badges": [
         {
             "type": "origins:tooltip",

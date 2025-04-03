@@ -1,6 +1,6 @@
 {
     "name": "Malleable Body",
-    "description": "Since your body is now made from gummy, you're harmed substantially more when sliced by a sword. However, you can jump much higher than you otherwise would at your size.",
+    "description": "Since your body is now made from gelatin, you're harmed substantially more when sliced by a sword. However, you can jump much higher than you otherwise would at your size.",
     "type": "origins:modify_damage_taken",
     "damage_condition": {
         "type": "origins:or",
