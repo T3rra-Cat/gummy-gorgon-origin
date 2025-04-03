@@ -4,7 +4,7 @@
     "type": "origins:multiple",
 
     "lose_size": {
-    "type": "origins:action_on_callback",
+    "type": "origins:action_on_added",
     "entity_action_added": {
         "type": "origins:and",
         "actions": [
