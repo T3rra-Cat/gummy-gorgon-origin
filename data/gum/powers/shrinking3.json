@@ -1,10 +1,10 @@
 {
     "name": "Shrunk",
-    "description": "Your body has finished shrinking, with you now standing at 90% your original height.",
+    "description": "Your body has finished shrinking, with you now standing at 50% your original height.",
     "type": "origins:multiple",
 
     "lose_size": {
-    "type": "origins:action_on_callback",
+    "type": "origins:action_on_added",
     "entity_action_added": {
         "type": "origins:and",
         "actions": [
