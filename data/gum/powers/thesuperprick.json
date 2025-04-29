@@ -1,0 +1,20 @@
+{
+    "name": "The Prick 2: The Last Prick",
+    "description": "You can inject yourself with all of a nether star's energy to become completely immune to gummification. [THIS IS A PLACEHOLDER UNTIL NATHAN MAKES AN ITEM THAT DOES IT]",
+    "type": "origins:action_on_item_use",
+    "trigger": "instant",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "origin set @s origins:gummification stage4"
+    },
+    "item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:nether_star"
+        }
+    }
+}

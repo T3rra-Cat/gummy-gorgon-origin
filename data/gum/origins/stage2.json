@@ -1,0 +1,22 @@
+{
+    "name": "Partially Gummyfied",
+    "description": "Your body has undergone more transformation in the last few days. Soon, you will be unrecognizeable from other gummy candies, besides your animation.",
+    "powers": [
+    "gum:atrophied",
+	"gum:edible",
+    "gum:malleable_body",
+    "gum:sticky_body",
+	"gum:soft_body",
+	"gum:shrinking2",
+	"gum:squishy_feet",
+	"gum:stage3trigger",
+	"origins:translucent",
+    "gum:theprick"
+    ],
+    "icon": {
+        "item": "minecraft:slime_ball"
+    },
+    "order": 2,
+    "impact": 2,
+    "loading_priority": 9
+}

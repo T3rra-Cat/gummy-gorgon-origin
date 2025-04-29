@@ -1,0 +1,95 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "item_use": {
+    "type": "origins:prevent_item_use"
+  },
+  "block_select": {
+    "type": "origins:prevent_block_selection"
+  },
+  "break": {
+    "type": "origins:modify_break_speed",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    }
+  },
+  "block_use": {
+    "type": "origins:prevent_block_use"
+  },
+  "entity_use": {
+    "type": "origins:prevent_entity_use"
+  },
+  "speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": -1
+    }
+  },
+  "jump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    }
+  },
+  "anti_jumpspeed": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    },
+    "axes": [
+      "x",
+      "z"
+    ]
+  },
+  "damage_taken": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    }
+  },
+  "damage_dealt": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": -1
+    }
+  },
+  "sleep": {
+    "type": "origins:prevent_sleep"
+  },
+  "enable_on_gain": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "scale multiply pehkui:height 0.01 @s"
+    }
+  },
+  "disable_on_loss": {
+    "type": "origins:action_on_callback",
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale divide pehkui:height 0.01 @s"
+    }
+  },
+  "kill_switch": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 9999,
+      "damage_type": "minecraft:dryout"
+    },
+    "cooldown": 2,
+    "key": {
+      "key": "key.origins.septenary_active"
+    },
+    "hud_render": {
+      "should_render": false
+    }
+  }
+}

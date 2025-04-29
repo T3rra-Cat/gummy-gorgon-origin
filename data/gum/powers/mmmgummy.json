@@ -1,0 +1,20 @@
+{
+    "name": "Mmmmm (Cursed) Gummy",
+    "description": "You can consume a slime block to immediately become fully gummified [THIS IS A PLACEHOLDER UNTIL NATHAN MAKES AN ITEM THAT DOES IT]",
+    "type": "origins:action_on_item_use",
+    "trigger": "instant",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "origin set @s origins:gummification stage3"
+    },
+    "item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:slime_block"
+        }
+    }
+}

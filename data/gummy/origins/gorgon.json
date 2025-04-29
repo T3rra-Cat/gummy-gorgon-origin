@@ -1,0 +1,24 @@
+{
+    "name": "Gummy Gorgon",
+    "description": "This origin doesn't have much going on don't pick it :/",
+    "powers": [
+	"gummy:gummy_sight",
+	"gummy:effect_immune",
+    "gummy:snake_eyes",
+	"gummy:delicate_snakes",
+	"gummy:eatingyum",
+	"gummy:melted_hair",
+	"gummy:squishy_feet",
+	"gummy:diet",
+	"gummy:eatingyum",
+    "gummy:sticky_slash",
+    "gummy:hard_scales",
+    "gummy:swamp_spawn",
+    "gummy:magic_guard"
+    ],
+    "icon": {
+        "item": "minecraft:pink_dye"
+    },
+    "order": 14,
+    "impact": 3
+}

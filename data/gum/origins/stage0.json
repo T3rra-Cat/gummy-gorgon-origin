@@ -1,0 +1,15 @@
+{
+    "name": "Not Afflicted",
+    "description": "You have not looked into the gummy gorgon's eyes yet. Be careful!",
+    "powers": [
+	       "gum:stage1trigger",
+           "gum:mmmgummy",
+           "gum:thesuperprick"
+    ],
+    "icon": {
+        "item": "minecraft:player_head"
+    },
+    "order": 1,
+    "impact": 0,
+    "loading_priority": 7
+}

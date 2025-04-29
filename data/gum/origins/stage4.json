@@ -1,0 +1,11 @@
+{
+    "name": "Magical Antibodies",
+    "description": "You are immune to the gummy gorgon's gaze.",
+    "powers": [],
+    "icon": {
+        "item": "minecraft:barrier"
+    },
+    "order": 3,
+    "impact": 3,
+    "loading_priority": 11
+}

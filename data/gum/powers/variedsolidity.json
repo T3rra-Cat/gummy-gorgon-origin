@@ -1,0 +1,286 @@
+{
+	"name": "Semi-Solid",
+	"description": "Your new body is much more temperature-sensitive, causing you to freeze at low temperatures and melt at high temperatures (mild melting causes you to have a more slime-like body, only being able to move through jumping, while full melting just stops you from doing anything).",
+	"badges": [
+		{
+			"type": "origins:tooltip",
+			"text": "You need to maintain your temperature. Powder snow, snowing, and cold biomes cause it to decrease. Fire, hot biomes, and the Nether cause it to increase. Dying or being near echoey mobs immediately regulates your temperature.",
+			"sprite": "origins:textures/gui/badge/info.png"
+		},
+		{
+			"type": "origins:tooltip",
+			"text": "Freezing causes you to be very slippery, only be able to move in short bursts, and unable to interact with the world outside your ice cube (besides chat)",
+			"sprite": "origins:textures/gui/badge/info.png"
+		},
+		{
+			"type": "origins:tooltip",
+			"text": "Melting a little causes your legs to combine into a slime-like lower body. This allows you to move through jumping, and you have a much higher jump, but you cant walk or get below the surface of water.",
+			"sprite": "origins:textures/gui/badge/info.png"
+		},
+		{
+			"type": "origins:tooltip",
+			"text": "Heavily melting causes your body to simply liquify, preventing you from doing anything until you can cool down and reform. You can press septenary active to die, since this state leaves no way to exit a biome or the Nether on your own.",
+			"sprite": "origins:textures/gui/badge/info.png"
+		}
+	],
+	"type": "origins:multiple",
+	"thermostat": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 100,
+		"start_value": 72
+	},
+	"saint_campaign_snow": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:biome",
+			"condition": {
+				"type": "origins:precipitation",
+				"precipitation": "snow"
+			}
+		}
+	},
+	"temp_loss_climate": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:biome",
+			"condition": {
+				"type": "origins:temperature",
+				"comparison": "<=",
+				"compare_to": 0.05
+			}
+		}
+	},
+	"temp_loss_snow": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"change": -2
+		},
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:block",
+				"block": "minecraft:powder_snow"
+			}
+		}
+	},
+	"saint_campaign_ghost": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 16,
+			"bientity_action": {
+				"type": "origins:actor_action",
+				"action": {
+					"type": "origins:change_resource",
+					"resource": "gum:variedsolidity_thermostat",
+					"change": 72,
+					"operation": "set"
+				}
+			},
+			"bientity_condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:wither"
+						}
+					},
+					{
+						"type": "target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:phantom"
+						}
+					},
+					{
+						"type": "target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:vex"
+						}
+					},
+					{
+						"type": "target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:stray"
+						}
+					},
+					{
+						"type": "target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:ghast"
+						}
+					}
+				]
+			}
+		}
+	},
+	"temp_gain_climate": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:biome",
+			"condition": {
+				"type": "origins:temperature",
+				"comparison": ">=",
+				"compare_to": 2.0
+			}
+		}
+	},
+	"temp_gain_fire": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"change": 2
+		},
+		"condition": {
+			"type": "origins:on_fire"
+		}
+	},
+	"temp_reset": {
+		"type": "origins:action_on_death",
+		"bientity_action": {
+			"type": "target_action",
+			"action": {
+				"type": "origins:change_resource",
+				"resource": "gum:variedsolidity_thermostat",
+				"change": 72,
+				"operation": "set"
+			}
+		}
+	},
+	"freeze": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:grant_power",
+			"power": "gum:solid"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"comparison": "<",
+			"compare_to": 33
+		}
+	},
+	"thaw": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:revoke_power",
+			"power": "gum:solid"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"comparison": ">",
+			"compare_to": 32
+		}
+	},
+	"melt1": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:grant_power",
+			"power": "gum:melty"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "gum:variedsolidity_thermostat",
+					"comparison": ">",
+					"compare_to": 86
+				},
+				{
+					"type": "origins:resource",
+					"resource": "gum:variedsolidity_thermostat",
+					"comparison": "<",
+					"compare_to": 95
+				}
+			]
+		}
+	},
+	"solifify1": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:revoke_power",
+			"power": "gum:melty"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "gum:variedsolidity_thermostat",
+					"comparison": "<",
+					"compare_to": 87
+				},
+				{
+					"type": "origins:resource",
+					"resource": "gum:variedsolidity_thermostat",
+					"comparison": ">",
+					"compare_to": 94
+				}
+			]
+		}
+	},
+	"melt2": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:grant_power",
+			"power": "gum:puddled"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"comparison": ">",
+			"compare_to": 94
+		}
+	},
+	"solidify2": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:revoke_power",
+			"power": "gum:puddled"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "gum:variedsolidity_thermostat",
+			"comparison": "<",
+			"compare_to": 95
+		}
+	}
+}
