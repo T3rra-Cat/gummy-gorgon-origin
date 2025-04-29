@@ -2,12 +2,16 @@ This is a document to list all the people who have worked on this datapack and w
 
 Idea by: edwardthewatzo
 
-Origin coding* by: t3rra_cat0
+Origin coding* by: T3rra-Cat
 
 *A couple powers had most of the work done by other coders. These powers are:
 
-Moisture Meter - created by psychobreadstick for the Slime-Taur origin (link [this link takes you to the figura discord server]: https://discordapp.com/channels/1129805506354085959/1279433667734671502/1279460358519521291)
+"melty" (the state in which fully gummified players are slime-like) - created by psychobreadstick for the Slime-Taur origin, though the elements used were combined into one power by T3rra-Cat
 
-Brightness - created by frucs as a general use power to increase the brightness of the screen (link [this link takes you to the origins discord server]: https://discordapp.com/channels/734127708488859831/825449766384828476/1284631766186983494)
+"puddled" (the state in which fully gummified players are flat and immobile) - created by dyrris for the Pooltoy origin mod
 
-Sugary Diet - created by edwardthe watzo (i think?) specifically for this origin
+"solid" (the state in which fully gummified players are frozen and mostly immobile) - created by gr_ai for the Ice Statue origin
+
+Brightness - created by frucs as a general use power to increase the brightness of the screen
+
+Sugary Diet - created by edwardthewatzo (i think?) specifically for this origin
